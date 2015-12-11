@@ -1,0 +1,40 @@
+<div class="container whitebox">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Login - TOTP</h1>
+
+      <p>Please log in to use CREMA Dashboard with Two Factor Authentication.</p>
+    </div>
+
+    <div class="col-sm-12">
+      <form class="form" name="form" ng-submit="verifyTotp(form)" novalidate>
+
+        <div class="form-group">
+          <label>Code</label>
+          <input type="text" name="code" class="form-control" ng-model="totp.code" required>
+        </div>
+
+        <div class="form-group has-error">
+          <p class="help-block" ng-show="form.code.$error.required && submitted">
+            Please enter your code using Google Authenticator.
+          </p>
+
+          <p class="help-block">{{ errors.other }}</p>
+          <p class="help-block">{{ errors.fp }}</p>
+        </div>
+
+        <div>
+          <button class="btn btn-inverse btn-lg btn-login" type="submit">
+            Login
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <hr>
+  <script type="application/javascript">
+    var fp = new Fingerprint().get();
+  </script>
+</div>

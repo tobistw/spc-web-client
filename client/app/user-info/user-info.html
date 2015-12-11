@@ -1,0 +1,59 @@
+<div class="container whitebox">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Crema User Infopoint</h1>
+    </div>
+    <div class="col-sm-12">
+      <label>
+        User Id:
+      </label>
+      <div>
+        {{meta.entity._id}}
+      </div>
+      <label>
+        User name:
+      </label>
+      <div>
+        {{meta.entity.name}}
+      </div>
+      <label>
+        User Role:
+      </label>
+      <div>
+        {{meta.entity.roles}}
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <h1>Public Payload</h1>
+      <label>
+        Address:
+      </label>
+      <div>
+        {{meta.publicPayload.fieldName1}}
+      </div>
+      <label>
+        Company:
+      </label>
+      <div>
+        {{meta.publicPayload.fieldName2}}
+      </div>
+      <label>
+        Factory:
+      </label>
+      <div>
+        {{meta.publicPayload.fieldName3}}
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    <h1>Private Payload</h1>
+    <label>
+      Dashboard Settings:
+    </label>
+    <div>
+      {{meta.privatePayload}}
+    </div>
+  </div>
+
+</div>
