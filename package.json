@@ -1,8 +1,10 @@
 {
   "name": "spc-client",
   "version": "0.0.1",
-  "main": "server.js",
+  "main": "server/server.js",
   "dependencies": {
+    "ejs": "^2.3.4",
+    "express": "^4.13.3"
   },
   "devDependencies": {
     "connect-livereload": "~0.4.0",
@@ -62,7 +64,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node server/server.js",
     "test": "grunt test",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
   },
