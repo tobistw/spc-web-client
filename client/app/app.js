@@ -4,9 +4,7 @@ angular.module('spc', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute',
-  'btford.socket-io',
-  'ui.bootstrap'
+  'ngRoute'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
