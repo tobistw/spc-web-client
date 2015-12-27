@@ -14,7 +14,7 @@ describe('Controller: MainCtrl', function () {
         });
     }));
 
-    it('should ...', function () {
-        expect(1).toEqual(1);
+    it('should display the title of the dashboard', function () {
+        expect(scope.title).toBe('Dashboard');
     });
 });
