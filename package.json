@@ -39,6 +39,7 @@
     "grunt-svgmin": "~0.4.0",
     "grunt-usemin": "~2.1.1",
     "grunt-wiredep": "~1.8.0",
+    "http-server": "^0.8.5",
     "jit-grunt": "^0.5.0",
     "jshint-stylish": "~0.1.5",
     "karma": "~0.12.9",
@@ -65,8 +66,11 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "node server/server.js",
-    "test": "grunt test",
+    "bower-install": "bower install",
+    "npm-install": "npm install",
+    "start": "http-server -a 0.0.0.0 -p 8080",
+    "grunt-start": "node server/server.js",
+    "grunt-test": "grunt test",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
   },
   "private": true
