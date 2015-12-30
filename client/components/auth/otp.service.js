@@ -2,7 +2,7 @@
  * Created by tobi on 20.10.2015.
  */
 angular.module('spc')
-  .factory('Totp', function Totp($http, Auth, CremaAuth, $q, $cookieStore) {
+  .factory('Totp', function Totp($http, Auth, CremaAuth, spcServerUrl, $q, $cookieStore) {
     var TotpService = {};
     var currentMetaData = Auth.getCurrentMetaData();
 
@@ -10,7 +10,7 @@ angular.module('spc')
       setupTotp: function () {
         var deferred = $q.defer();
 
-        $http.get('/api/auth/setup-otp', {
+        $http.get(spcServerUrl + '/api/auth/setup-otp', {
           params: currentMetaData
         }).
           success(function (data) {
@@ -28,7 +28,7 @@ angular.module('spc')
       verifyTotp: function (totp, fingerprint) {
         var deferred = $q.defer();
 
-        $http.post('/api/auth/login-otp', {
+        $http.post(spcServerUrl + '/api/auth/login-otp', {
           code: totp.code,
           user: currentMetaData,
           fingerprint: totp.fingerprint
@@ -56,7 +56,7 @@ angular.module('spc')
         currentMetaData.fingerprint = fingerprint;
 
         //todo: encode at least base 64 (sensitive information)
-        $http.get('/api/auth/login-otp', {
+        $http.get(spcServerUrl + '/api/auth/login-otp', {
           params: currentMetaData
         })
           .success(function (data) {

@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('spc')
-  .factory('User', function ($resource) {
-    return $resource('/auth/users/:id/:controller', {
+  .factory('User', function ($resource, spcServerUrl) {
+    return $resource(spcServerUrl + '/auth/users/:id/:controller', {
         id: '@_id'
       },
       {
@@ -16,9 +16,9 @@ angular.module('spc')
   });
 
 angular.module('spc')
-  .factory('CremaAuth', function ($resource, $cookieStore) {
-    return $resource('/api/auth/001', {
-      apikey: '59559afbdae9e1075e68fa263057653b',
+  .factory('CremaAuth', function ($resource, $cookieStore, spcServerUrl, apiKey, projectId) {
+    return $resource(spcServerUrl + '/api/auth/' + projectId, {
+      apikey: apiKey,
       access_token: function() {
         return $cookieStore.get('access_token');
       }
