@@ -418,7 +418,7 @@ module.exports = function (grunt) {
 
     protractor: {
       options: {
-        configFile: 'protractor.conf.js'
+        configFile: 'test/protractor.conf.js'
       },
       chrome: {
         options: {
@@ -540,7 +540,13 @@ module.exports = function (grunt) {
     if (target === 'server') {
       return grunt.task.run([
         'env:all',
-        'env:test'
+        'env:test',
+        'concurrent:test',
+        'injector',
+        'wiredep',
+        'autoprefixer',
+        'express:dev',
+        'protractor'
       ]);
     }
 
