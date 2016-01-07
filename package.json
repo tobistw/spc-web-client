@@ -68,7 +68,7 @@
   "scripts": {
     "bower-install": "bower install",
     "npm-install": "npm install",
-    "start": "http-server -a 0.0.0.0 -p 8080",
+    "start": "http-server client/ --cors -o -a 0.0.0.0 -p 8080",
     "grunt-start": "node server/server.js",
     "grunt-test": "grunt test",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"

@@ -7,7 +7,7 @@ angular.module('spc')
         templateUrl: 'app/account/login/login.html',
         controller: 'LoginCtrl'
       })
-      .when('/api/auth/google', {
+      .when('/google-login', {
         templateUrl: 'app/account/login-google/google-login.html',
         controller: 'GoogleCtrl'
     })

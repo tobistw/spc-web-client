@@ -1,3 +1,11 @@
+.form {
+  max-width: 365px;
+}
+
+.btn-crema {
+  color: #fff;
+  background-color: #0189ce;
+}
 
 .btn-google-plus {
   color: #fff;
@@ -7,6 +15,6 @@
 
 .btn-github {
   color: #fff;
-  background-color: #fafafa;
+  background-color: grey;
   border-color: #ccc;
 }

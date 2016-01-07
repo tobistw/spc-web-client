@@ -19,7 +19,7 @@ To get you started you can simply clone the SPC-WEB-CLIENT repository and instal
 
 ### Prerequisites
 
-You need git to clone the angular-seed repository. You can get git from
+You need git to clone the SPC-WEB-CLIENT repository. You can get git from
 [http://git-scm.com/](http://git-scm.com/).
 
 There are also a number of node.js tools to initialize and test SPC-WEB-CLIENT. You must have node.js and
@@ -59,14 +59,14 @@ npm install
 bower install
 ```
 
-* `node_modules` - contains the npm packages for the tools we need
+* `node_modules` - contains the npm packages for the tools
 * `client/bower_components` - contains the angular framework files
 
 *Note that the `bower_components` folder would normally be installed in the root folder but
 spc-web-client changes this location through the `.bowerrc` file.  Putting it in the app folder makes
 it easier to serve the files by a webserver.*
 
-### Configuring for SPC-Server
+### Configuring for SPC-SERVER and SPC-WEB-CLIENT
 
 * setup the client on the server with its API Key and the project Id.
 * edit the client/app/app.js file constants, example:
@@ -169,7 +169,7 @@ This script will execute the end-to-end tests against the application being host
 development server.
 
 
-## Updating spc-web-client
+## Updating SPC-WEB-CLIENT
 
 You can update the tool dependencies by running:
 
