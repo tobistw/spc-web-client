@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spc')
-  .factory('Auth', function Auth($location, $rootScope, $http, User, CremaAuth, spcServerUrl, $cookieStore, $q) {
+  .factory('Auth', function Auth($location, $rootScope, $http, User, CremaAuth, spcServerUrl, apiKey, $cookieStore, $q) {
     var currentMetaData = {};
     if ($cookieStore.get('access_token')) {
       currentMetaData = CremaAuth.get();
@@ -20,6 +20,7 @@ angular.module('spc')
         var deferred = $q.defer();
 
         $http.post(spcServerUrl + '/api/auth/login', {
+          apikey: apiKey,
           email: user.email,
           password: user.password
         }).

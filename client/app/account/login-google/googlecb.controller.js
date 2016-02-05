@@ -48,6 +48,7 @@ angular.module('spc').controller('GoogleCbCtrl', function ($location, Auth, $sco
 
   function clear() {
     $location.search('access_token', null);
+    $location.search('refresh_token', null);
     $location.search('secondFactor', null);
     $location.search('setupOtp', null);
     $location.search('email', null);
